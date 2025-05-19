@@ -1,6 +1,21 @@
 import streamlit as st
-st.title('나의 첫 웹 서비스 만들기!!')
-name = st.text_input('이름을 입력해주세요 : ')
-menu = st.selectbox('좋아하는 음식을 선택해주세요:', ['망고빙수','아몬드봉봉'])
-if st.button('인사말 생성') : 
-  st.write(name+'님! 당신이 좋아하는 음식은 '+menu+'이군요?! 저도 좋아요!!')
+
+# 페이지 기본 설정
+st.set_page_config(page_title="MBTI 담임 유형 테스트 🧑‍🏫", page_icon="🧠", layout="centered")
+
+st.title("당신의 MBTI는 어떤 담임쌤일까요? 🤔👩‍🏫👨‍🏫")
+st.subheader("MBTI를 선택하면 그에 맞는 교사 캐릭터가 짠!✨")
+
+mbti_list = [
+    "ISTJ", "ISFJ", "INFJ", "INTJ",
+    "ISTP", "ISFP", "INFP", "INTP",
+    "ESTP", "ESFP", "ENFP", "ENTP",
+    "ESTJ", "ESFJ", "ENFJ", "ENTJ"
+]
+
+user_mbti = st.selectbox("당신의 MBTI를 선택하세요 👇", mbti_list)
+
+# MBTI별 교사 캐릭터 사전
+mbti_teacher_profiles = {
+    "ISTJ": "📋 **ISTJ 담임쌤** - '규칙은 소중해요' 📏\n✅ 출석부는 늘 정확히 체크\n🕘 5분 전에 출근, 5분 전에 종례 준비 완료\n📎 시험지 3번 검토하는 꼼꼼함!",
+    "ISFJ": "🧸 **ISFJ 담임쌤** - '우리 애들 잘 챙겨야죠' 💖\n🍪 간식 나눠주는 천사 쌤\n📌 상
